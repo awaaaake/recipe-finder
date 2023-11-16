@@ -10,15 +10,16 @@ var theme = ThemeData(
       splashFactory: NoSplash.splashFactory, // 스플래시 효과를 없애는 부분
     ),
   ),
+  textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+    overlayColor:
+        MaterialStateColor.resolveWith((states) => Colors.transparent),
+  )),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     selectedItemColor: Colors.black,
   ),
   appBarTheme: AppBarTheme(
-      color: Colors.white,
-      // elevation: 1,//그림자 크기
-      // titleTextStyle: TextStyle(color: Colors.black, fontSize: 25),
-      // actionsIconTheme: IconThemeData(color: Colors.black)
+    color: Colors.white,
   ),
-  textTheme: TextTheme(
-  ),
+  textTheme: TextTheme(),
 );
