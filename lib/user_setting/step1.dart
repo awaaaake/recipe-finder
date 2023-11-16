@@ -37,6 +37,7 @@ class _Step1State extends State<Step1> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Color(0xffACACAC),), // 뒤로가기 아이콘
           onPressed: () {
+            userPrefer.resetUserLikes();
             Navigator.of(context).pop(); // 뒤로가기 기능 수행
           },
         ),
