@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class RecipeDetailPage extends StatefulWidget {
   final Map recipe;
 
-  RecipeDetailPage({required this.recipe});
+  const RecipeDetailPage({required this.recipe});
 
   @override
   State<RecipeDetailPage> createState() => _RecipeDetailPageState();

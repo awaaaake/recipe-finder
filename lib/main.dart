@@ -39,7 +39,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var tab = 0;
   var data =[];
-
+/*
   getData() async {
     var result = await http.get(
         Uri.parse('https://codingapple1.github.io/app/data.json')
@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     getData();
   }
-
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(

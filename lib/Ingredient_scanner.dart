@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import './RecipePage.dart';
 
 class Scanner extends StatefulWidget {
-  Scanner({Key? key}) : super(key: key);
+  const Scanner({Key? key}) : super(key: key);
 
   @override
   State<Scanner> createState() => _Step1State();

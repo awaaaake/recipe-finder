@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './mypage.dart';
 import './search.dart';
+import './board.dart';
 import './Ingredient_scanner.dart';
 
 class Home extends StatefulWidget {
@@ -16,7 +17,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:[Search(), Scanner(), Mypage()][_tab], //list에서 자료뽑는 문법
+      body:[Search(), Board(), Scanner(), Mypage()][_tab], //list에서 자료뽑는 문법
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -29,6 +30,10 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
               icon: Icon(Icons.search),
               label: '검색'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.dashboard_customize),
+              label: '게시판'
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.home),

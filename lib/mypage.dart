@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Mypage extends StatefulWidget {
-  Mypage({Key? key}) : super(key: key);
+  const Mypage({Key? key}) : super(key: key);
 
   @override
   State<Mypage> createState() => _SearchState();

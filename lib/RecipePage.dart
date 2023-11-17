@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import './RecipeDetailPage.dart';
 
 class RecipePage extends StatefulWidget {
-  RecipePage({Key? key}) : super(key: key);
+  const RecipePage({Key? key}) : super(key: key);
 
   @override
   State<RecipePage> createState() => _RecipePageState();
