@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; // JSON Encode, Decode를 위한 패키지
 import 'package:flutter_secure_storage/flutter_secure_storage.dart'; // flutter_secure_storage 패키지
-import 'package:instagram/login/kakao_login.dart';
-import 'package:instagram/login/main_view_model..dart';
+import './kakao_login.dart';
+import './main_view_model..dart';
 import '../home.dart';
 import '../signup/signup.dart';
 
