@@ -64,12 +64,30 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var tab = 0;
   var data =[];
+<<<<<<< HEAD
+/*
+  getData() async {
+    var result = await http.get(
+        Uri.parse('https://codingapple1.github.io/app/data.json')
+    );
+    if (result.statusCode == 200) {
+      print( jsonDecode(result.body) );
+      var result2=jsonDecode(result.body);
+      setState(() {
+        data=result2;
+      });
+    } else {
+      throw Exception('실패함ㅅㄱ');
+    }
+  }
+=======
+>>>>>>> c03ac470a81da73dc28af92deec7b1bf6c1e6917
 
   @override
   void initState() {
     super.initState();
   }
-
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
