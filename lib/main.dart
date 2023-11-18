@@ -1,30 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/splash_screen.dart';
-//다른파일에있는 변수, 함수를 쓰고 싶으면 import '파일경로'
+import 'package:instagram/login/login.dart';
+import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
+import 'package:provider/provider.dart';
 import './style.dart' as style;
-import 'login/login.dart';
-import './RecipeDetailPage.dart';
-import './RecipePage.dart';
+import './signup/additional_info.dart';
+import 'login/start.dart';
+import './Recipe/RecipeDetailPage.dart';
+import 'Recipe/RecipePage.dart';
+import './review/Review.dart';
 import './home.dart';
-import './Ingredient_scanner.dart';
-import './Step1.dart';
+import 'tab/Ingredient_scanner.dart';
+import './user_setting/step1.dart';
+import './user_setting/step2.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-// import 'package:flutter/rendering.dart';
+import './tab/menu.dart';
+import 'object_detection/views/HomeScreen.dart';
+import 'provider/user_preferences_provider.dart';
+import'signup/signup.dart';
+import './tab/search.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 var theme; //변수 중복 문제
 
-void main() {
+void main() async {
+  // 웹 환경에서 카카오 로그인을 정상적으로 완료하려면 runApp() 호출 전 아래 메서드 호출 필요
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  String? _nativeAppKey = dotenv.env['KAKAO_NATIVE_APP_KEY'];
+  String? _javaScriptAppKey = dotenv.env['KAKAO_JAVASCRIPT_APP_KEY'];
+
+  // runApp() 호출 전 Flutter SDK 초기화
+  KakaoSdk.init(
+    nativeAppKey: _nativeAppKey,
+    javaScriptAppKey: _javaScriptAppKey,
+  );
+
   runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: style.theme,
-        home: MyApp(),
-        // initialRoute: '/',
-        // routes: {
-        //   '/': (context) => MyApp(),
-        //   '/login': (context) => Login(),
-        // },
+      ChangeNotifierProvider(
+        create: (context) => UserPrefer(), // UserPrefer 객체를 제공
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: style.theme,
+          initialRoute: '/',
+          routes: {
+            '/': (context) => MyApp(),
+            '/login': (context) => Login(),
+            '/home' : (context) => Home(),
+            '/menu': (context) => Menu(),
+          },
+        ),
       )
   );
 }
@@ -39,6 +64,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var tab = 0;
   var data =[];
+<<<<<<< HEAD
 /*
   getData() async {
     var result = await http.get(
@@ -54,52 +80,18 @@ class _MyAppState extends State<MyApp> {
       throw Exception('실패함ㅅㄱ');
     }
   }
+=======
+>>>>>>> c03ac470a81da73dc28af92deec7b1bf6c1e6917
 
   @override
   void initState() {
     super.initState();
-    getData();
   }
 */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     title: Text('Instagram'),
-      //     actions: [
-      //       IconButton(
-      //         onPressed: (){
-      //           Navigator.push(context,
-      //               MaterialPageRoute(builder: (c)//context를 하나 만들어줌 새롭게
-      //               => Text('') //커스텀위젯
-      //               )
-      //           ); //Materialapp이 들어있는 context를 넣어야함
-      //         },
-      //         icon: Icon(Icons.add_box_outlined),
-      //         iconSize: 30,
-      //       )
-      //     ]
-      // ),
       body: Login(),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   showSelectedLabels: false,
-      //   showUnselectedLabels: false,
-      //   onTap: (i){
-      //     setState(() {
-      //       tab=i;
-      //     });
-      //   },//onpressed와 거의 동일, 파라미터를 기본적으로 입력하게 돼있음, i는 지금 누른 버튼 번호임
-      //   items: [
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.home_outlined),
-      //         label:'홈'
-      //     ),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.shopping_bag_outlined),
-      //         label:'샵'
-      //     ),
-      //   ],
-      // ),
     );
   }
 }
