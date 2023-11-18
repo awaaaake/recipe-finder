@@ -17,7 +17,7 @@ class _SearchState extends State<Search> {
   String? baseurl = dotenv.env['API_BASE_URL'];
   TextEditingController _controller = TextEditingController();
   List<Map> _recipes = [];
-  var filter = ['평점높은 순', '칼로리낮은 순', '단백질높은 순'];
+  var filter = ['평점높은 순', '칼로리낮은 순', '단백질높은 순', '재료적은 순'];
   var isSelected;
   bool _showNoResults = false;
 
@@ -33,11 +33,6 @@ class _SearchState extends State<Search> {
           _showNoResults = false;
         });
 
-        //수정필요
-        // for (var recipe in _recipes) {
-        //   String rcpId = recipe['rcpId'];
-        //   await _getReview(rcpId);
-        // }
         print(List<Map>.from(data['result']));
       } else {
         // 서버에서 isSuccess가 true가 아닌 경우 에러 처리
@@ -74,6 +69,11 @@ class _SearchState extends State<Search> {
     if (isSelected == 2) {
       _recipes.sort((a, b) =>
           double.parse(b['infoPro']).compareTo(double.parse(a['infoPro'])));
+    }
+
+    if (isSelected == 3) {
+      _recipes.sort((a, b) =>
+          calculateIngredientCount(a['rcpPartsDtls']).compareTo(calculateIngredientCount(b['rcpPartsDtls'])));
     }
 
     setState(() {});
@@ -125,39 +125,42 @@ class _SearchState extends State<Search> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              child: Wrap(
-                direction: Axis.horizontal,
-                // 나열 방향
-                alignment: WrapAlignment.start,
-                spacing: 15.0,
-                // 버튼 사이의 간격
-                runSpacing: 15.0,
-                // 줄 사이의 간격
-                children: List.generate(
-                    filter.length,
-                    (i) => ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              isSelected = i;
-                            });
-                            filterRecipes();
-                          },
-                          child: Text(
-                            filter[i],
-                            style: TextStyle(
-                              fontSize: 13.0,
-                              color: Colors.black,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Wrap(
+                  direction: Axis.horizontal,
+                  // 나열 방향
+                  alignment: WrapAlignment.start,
+                  spacing: 15.0,
+                  // 버튼 사이의 간격
+                  runSpacing: 15.0,
+                  // 줄 사이의 간격
+                  children: List.generate(
+                      filter.length,
+                      (i) => ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                isSelected = i;
+                              });
+                              filterRecipes();
+                            },
+                            child: Text(
+                              filter[i],
+                              style: TextStyle(
+                                fontSize: 13.0,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: isSelected == i
-                                ? Color(0xFFFFB01D)
-                                : Color(0xfff2f4f7),
-                            elevation: 0.0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30.0)),
-                          ),
-                        )),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: isSelected == i
+                                  ? Color(0xFFFFB01D)
+                                  : Color(0xfff2f4f7),
+                              elevation: 0.0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0)),
+                            ),
+                          )),
+                ),
               ),
             ),
             SizedBox(

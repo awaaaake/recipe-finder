@@ -23,7 +23,7 @@ class _RecipePageState extends State<RecipePage> {
 
   final _mainTitleStyle = TextStyle(
       fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black);
-  var filter = ['평점높은 순', '칼로리낮은 순', '단백질높은 순'];
+  var filter = ['평점높은 순', '칼로리낮은 순', '단백질높은 순', '재료적은 순'];
   List<dynamic> _recipes = [];
   var isSelected;
   List<String> user_allergies = [];
@@ -123,6 +123,11 @@ class _RecipePageState extends State<RecipePage> {
           double.parse(b['infoPro']).compareTo(double.parse(a['infoPro'])));
     }
 
+    if (isSelected == 3) {
+      _recipes.sort((a, b) =>
+          calculateIngredientCount(a['rcpPartsDtls']).compareTo(calculateIngredientCount(b['rcpPartsDtls'])));
+    }
+
     setState(() {});
   }
 
@@ -182,39 +187,42 @@ class _RecipePageState extends State<RecipePage> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              child: Wrap(
-                direction: Axis.horizontal,
-                // 나열 방향
-                alignment: WrapAlignment.start,
-                spacing: 15.0,
-                // 버튼 사이의 간격
-                runSpacing: 15.0,
-                // 줄 사이의 간격
-                children: List.generate(
-                    filter.length,
-                    (i) => ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              isSelected = i;
-                            });
-                            filterRecipes();
-                          },
-                          child: Text(
-                            filter[i],
-                            style: TextStyle(
-                              fontSize: 13.0,
-                              color: Colors.black,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Wrap(
+                  direction: Axis.horizontal,
+                  // 나열 방향
+                  alignment: WrapAlignment.start,
+                  spacing: 15.0,
+                  // 버튼 사이의 간격
+                  runSpacing: 15.0,
+                  // 줄 사이의 간격
+                  children: List.generate(
+                      filter.length,
+                      (i) => ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                isSelected = i;
+                              });
+                              filterRecipes();
+                            },
+                            child: Text(
+                              filter[i],
+                              style: TextStyle(
+                                fontSize: 13.0,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: isSelected == i
-                                ? Color(0xFFFFB01D)
-                                : Color(0xfff2f4f7),
-                            elevation: 0.0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30.0)),
-                          ),
-                        )),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: isSelected == i
+                                  ? Color(0xFFFFB01D)
+                                  : Color(0xfff2f4f7),
+                              elevation: 0.0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0)),
+                            ),
+                          )),
+                ),
               ),
             ),
             SizedBox(
