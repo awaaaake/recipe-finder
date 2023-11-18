@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+import './mypage.dart';
+import './search.dart';
+import './board.dart';
+import './Ingredient_scanner.dart';
+=======
 import 'tab/mypage.dart';
 import './tab/search.dart';
 import 'tab/menu.dart';
 import './tab/Ingredient_scanner.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+>>>>>>> c03ac470a81da73dc28af92deec7b1bf6c1e6917
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -39,7 +46,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
+      body:[Search(), Board(), Scanner(), Mypage()][_tab], //list에서 자료뽑는 문법
+=======
       body:[Search(), Scanner(), Menu(), Mypage()][_tab], //list에서 자료뽑는 문법
+>>>>>>> c03ac470a81da73dc28af92deec7b1bf6c1e6917
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, // 아이콘 간격을 일정하게
         showSelectedLabels: false,
@@ -55,11 +66,19 @@ class _HomeState extends State<Home> {
               label: '검색'
           ),
           BottomNavigationBarItem(
+<<<<<<< HEAD
+              icon: Icon(Icons.dashboard_customize),
+              label: '게시판'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+=======
               icon: Icon(Icons.add_circle, color: Colors.grey[600]),
               label: '재료스캐너'
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.home, color: Colors.grey[600]),
+>>>>>>> c03ac470a81da73dc28af92deec7b1bf6c1e6917
               label: '홈'
           ),
           BottomNavigationBarItem(
