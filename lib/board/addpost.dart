@@ -93,6 +93,7 @@ class _AddPostState extends State<AddPost> {
                         BorderSide(color: Colors.grey), // 포커스가 있는 상태의 색상
                   ),
                   hintText: '제목',
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 15.0),
                 ),
                 onSaved: (String? value) {
                   title = value ?? '';
