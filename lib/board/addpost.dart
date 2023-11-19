@@ -59,8 +59,22 @@ class _AddPostState extends State<AddPost> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("새 게시글 작성"),
-        backgroundColor: Color(0xFFFFB01D),
+        title: Text(
+          '새 게시글 작성',
+          style: TextStyle(
+              color: Color(0xffACACAC),
+              fontSize: 15.0,
+              fontWeight: FontWeight.w400),
+        ),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Color(0xffACACAC),
+          ), // 뒤로가기 아이콘
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),

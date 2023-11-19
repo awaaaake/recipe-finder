@@ -116,6 +116,8 @@ class _SearchState extends State<Mypage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        elevation: 1,
         actions: [
           PopupMenuButton(
               icon: Icon(Icons.more_vert, color:Colors.grey[600]),

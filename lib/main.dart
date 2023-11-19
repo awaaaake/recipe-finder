@@ -15,11 +15,11 @@ import './user_setting/step2.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import './tab/menu.dart';
-import 'object_detection/views/HomeScreen.dart';
 import 'provider/user_preferences_provider.dart';
 import'signup/signup.dart';
 import './tab/search.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import './object_detection/classifier.dart';
 
 var theme; //변수 중복 문제
 
@@ -37,8 +37,10 @@ void main() async {
   );
 
   runApp(
-      ChangeNotifierProvider(
-        create: (context) => UserPrefer(), // UserPrefer 객체를 제공
+      MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => UserPrefer()),
+          ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: style.theme,
@@ -64,30 +66,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var tab = 0;
   var data =[];
-<<<<<<< HEAD
-/*
-  getData() async {
-    var result = await http.get(
-        Uri.parse('https://codingapple1.github.io/app/data.json')
-    );
-    if (result.statusCode == 200) {
-      print( jsonDecode(result.body) );
-      var result2=jsonDecode(result.body);
-      setState(() {
-        data=result2;
-      });
-    } else {
-      throw Exception('실패함ㅅㄱ');
-    }
-  }
-=======
->>>>>>> c03ac470a81da73dc28af92deec7b1bf6c1e6917
 
   @override
   void initState() {
     super.initState();
   }
-*/
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

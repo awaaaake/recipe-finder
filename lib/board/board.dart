@@ -56,10 +56,16 @@ class _BoardState extends State<Board> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('게시판'),
         automaticallyImplyLeading: false,
-        backgroundColor: Color(0xFFFFB01D),
+        title: Text(
+          '게시판',
+          style: TextStyle(
+              color: Color(0xffACACAC),
+              fontSize: 15.0,
+              fontWeight: FontWeight.w400),
+        ),
         elevation: 1,
+        // backgroundColor: Color(0xFFFFB01D),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
