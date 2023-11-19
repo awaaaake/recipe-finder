@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//변수를 다른파일에서 쓰기 싫으면 _쓰기
 
 var theme = ThemeData(
   splashColor: Colors.transparent,

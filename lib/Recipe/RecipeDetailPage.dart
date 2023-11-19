@@ -3,11 +3,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import '../review/review.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../provider/user_bookmarkedRecipes.dart';
 
 class RecipeDetailPage extends StatefulWidget {
   final Map recipe;

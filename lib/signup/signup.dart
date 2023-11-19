@@ -4,9 +4,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../login/login.dart';
-import '../home.dart';
-import '../login/kakao_login.dart';
-import '../login/main_view_model..dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);

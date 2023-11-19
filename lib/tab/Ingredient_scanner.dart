@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../Recipe/RecipePage.dart';
 
 class Scanner extends StatefulWidget {
   const Scanner({Key? key}) : super(key: key);

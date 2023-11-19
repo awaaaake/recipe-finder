@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/Recipe/RecipePage.dart';
-import 'Ingredient_scanner.dart';
+import '../Recipe/RecipePage.dart';
 import '../user_setting/Step1.dart';
-import '../home.dart';
 
 class Menu extends StatefulWidget {
   Menu({Key? key}) : super(key: key);

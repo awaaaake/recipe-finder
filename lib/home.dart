@@ -4,7 +4,6 @@ import 'object_detection/classifier.dart';
 import 'tab/mypage.dart';
 import './tab/search.dart';
 import 'tab/menu.dart';
-import './tab/Ingredient_scanner.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class Home extends StatefulWidget {
