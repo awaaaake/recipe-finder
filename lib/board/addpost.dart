@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -10,15 +12,24 @@ class AddPost extends StatefulWidget {
 }
 
 class _AddPostState extends State<AddPost> {
+  String? baseurl = dotenv.env['API_BASE_URL'];
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   var title = '';
   var content = '';
 
   Future<void> addPost() async {
+    final storage = FlutterSecureStorage();
+    String? jwtToken = await storage.read(key: 'jwt');
+    if (jwtToken == null) {
+      print('jwt토큰이 존재하지 않습니다');
+      //로그인해주십시오
+      return;
+    }
+
     final response = await http.post(
-      Uri.parse('http://15.164.139.103:8080/board/add'),
+      Uri.parse('$baseurl/board/add'),
       headers: <String, String>{
-        'X-ACCESS-TOKEN': "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJpZCI6MTIwLCJpYXQiOjE3MDAxMTUyMTksImV4cCI6MTcwMTU4NjQ0OH0.FsQdpZtDtb0S3E_fWLnJM42TGmL4D7eMt7yJYfkoPYw",
+        'X-ACCESS-TOKEN': jwtToken,
       },
       body: <String, String>{
         'title': title,
@@ -27,13 +38,20 @@ class _AddPostState extends State<AddPost> {
     );
 
     if (response.statusCode == 200) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('게시글이 성공적으로 등록되었습니다.')),
-      );
+      Map responseData = jsonDecode(utf8.decode(response.bodyBytes));
+      bool isSuccess = responseData['isSuccess'];
+      if (isSuccess) {
+        Navigator.of(context).pop('post_update');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('게시글이 성공적으로 등록되었습니다.')),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('게시글 등록에 실패하였습니다.')),
+        );
+      }
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('게시글 등록에 실패하였습니다.')),
-      );
+      print('Failed to post');
     }
   }
 
@@ -51,9 +69,16 @@ class _AddPostState extends State<AddPost> {
           child: Column(
             children: <Widget>[
               TextFormField(
+                cursorColor: Colors.grey,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: '제목',
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey), // 원하는 색상으로 변경
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.grey), // 포커스가 있는 상태의 색상
+                  ),
+                  hintText: '제목',
                 ),
                 onSaved: (String? value) {
                   title = value ?? '';
@@ -61,9 +86,18 @@ class _AddPostState extends State<AddPost> {
               ),
               SizedBox(height: 10),
               TextFormField(
+                maxLines: 6,
+                cursorColor: Colors.grey,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: '내용',
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey), // 원하는 색상으로 변경
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.grey), // 포커스가 있는 상태의 색상
+                  ),
+                  hintText: '내용',
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 15.0),
                 ),
                 onSaved: (String? value) {
                   content = value ?? '';
@@ -71,9 +105,12 @@ class _AddPostState extends State<AddPost> {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFFB01D)),
-                ),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFFFB01D),
+                    minimumSize: Size(150, 50),
+                    elevation: 0.0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0))),
                 child: Text('게시글 등록'),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
