@@ -135,6 +135,19 @@ class _ClassifierState extends State<Classifier> {
               fontSize: 15.0,
               fontWeight: FontWeight.w400),
         ),
+        actions: _recognitions.isNotEmpty
+            ? [
+          IconButton(
+            icon: Icon(Icons.refresh, color: Colors.black),
+            onPressed: () {
+              setState(() {
+                _recognitions = [];
+                v = "";
+                _image = null;
+              });
+            },
+          ),
+        ] : [],
         elevation: 1,
       ),
       body: Center(
