@@ -153,6 +153,7 @@ class _Step1State extends State<Step2> {
             SizedBox(height: 20),
             Container(
               child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
                   child: Wrap(
                 direction: Axis.horizontal,
                 // 나열 방향
