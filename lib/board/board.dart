@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/addpost.dart';
-import './style.dart' as style;
+import 'package:instagram/object_detection/addpost.dart';
+import '../style.dart' as style;
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

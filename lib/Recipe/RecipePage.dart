@@ -133,6 +133,8 @@ class _RecipePageState extends State<RecipePage> {
 
   @override
   Widget build(BuildContext context) {
+    UserPrefer userPrefer = Provider.of<UserPrefer>(context);
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -141,11 +143,9 @@ class _RecipePageState extends State<RecipePage> {
             color: Color(0xffACACAC),
           ), // 뒤로가기 아이콘
           onPressed: () {
+            userPrefer.resetUserLikes();
+            userPrefer.resetUserAllergies();
             Navigator.pushNamed(context, '/home');
-            // Navigator.popUntil(context, (route) {
-            //   // Step1Widget 화면까지 돌아가기
-            //   return route.settings.name == '/menu';
-            // });
           },
         ),
         elevation: 0,
