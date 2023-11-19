@@ -246,21 +246,6 @@ class _SearchState extends State<Mypage> {
                   ElevatedButton.icon(
                     onPressed: () {},
                     icon: Icon(
-                      Icons.local_grocery_store,
-                      color: Color(0xFF242760),
-                    ),
-                    label: Text(
-                      '내가 사용한 레시피',
-                      style: TextStyle(
-                          color: Color(0xFF242760),
-                          fontWeight: FontWeight.bold),
-                    ),
-                    style: mypage_menu,
-                  ),
-                  SizedBox(height: 10), // 간격을 조절하기 위한 SizedBox 위젯 추가
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
                       Icons.book,
                       color: Color(0xFF242760),
                     ),
