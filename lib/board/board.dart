@@ -68,7 +68,7 @@ class _BoardState extends State<Board> {
         // backgroundColor: Color(0xFFFFB01D),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.search, color: Color(0xffACACAC),),
             onPressed: () async {
               await showDialog<String>(
                 context: context,
