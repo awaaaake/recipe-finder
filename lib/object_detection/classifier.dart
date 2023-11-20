@@ -23,11 +23,9 @@ class _ClassifierState extends State<Classifier> {
   List<Map<dynamic, dynamic>> _recognitions = [];
   var v = "";
 
-  // var dataList = [];
   @override
   void initState() {
     super.initState();
-    print('_recognitions : $_recognitions');
     UserPrefer userPrefer = UserPrefer();
     userPrefer.resetUserLikes();
     loadmodel().then((value) {
@@ -51,19 +49,22 @@ class _ClassifierState extends State<Classifier> {
     );
   }
 
-  Future<void> _pickImage() async {
+  //갤러리 이미지 선택
+  Future<void> _pickImage(UserPrefer userPrefer) async {
     try {
       final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
       setState(() {
         _image = image;
         file = File(image!.path);
       });
-      detectimage(file!);
+      await detectimage(file!);
+      _addToUserLikes(userPrefer);
     } catch (e) {
       print('Error picking image: $e');
     }
   }
 
+  //사진 촬영
   Future<void> _captureImage(UserPrefer userPrefer) async {
     try {
       final XFile? image = await _picker.pickImage(source: ImageSource.camera);
@@ -89,7 +90,6 @@ class _ClassifierState extends State<Classifier> {
     );
     setState(() {
       if (recognitions != null && recognitions.isNotEmpty) {
-        v = "";
         for (var result in recognitions) {
           if (result.containsKey('label')) {
             if (v.isNotEmpty) {
@@ -100,7 +100,6 @@ class _ClassifierState extends State<Classifier> {
               // 정규 표현식을 사용하여 숫자를 제외한 텍스트만 추출
               String labelText = label.replaceAll(RegExp(r'\d+'), '').trim();
               v += labelText;
-              print('result : $result');
               setState(() {
                 _recognitions.add({'label': labelText, 'confidence': result['confidence']});
               });
@@ -141,6 +140,7 @@ class _ClassifierState extends State<Classifier> {
             icon: Icon(Icons.refresh, color: Colors.black),
             onPressed: () {
               setState(() {
+                userPrefer.resetUserLikes();
                 _recognitions = [];
                 v = "";
                 _image = null;
@@ -157,7 +157,7 @@ class _ClassifierState extends State<Classifier> {
             if (_image != null)
               Image.file(
                 File(_image!.path),
-                height: MediaQuery.of(context).size.height - 300,
+                height: MediaQuery.of(context).size.height - 400,
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,
               )
@@ -166,30 +166,65 @@ class _ClassifierState extends State<Classifier> {
             SizedBox(height: 20),
             Text('📌  $v', style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.bold),),
             SizedBox(height: 20),
-            SizedBox(
-              width: 300,
-              height: 50,
-              child: (_recognitions.isNotEmpty)
-                  ? ElevatedButton(
-                      onPressed: () {
-                        print('userPrefer.userLikes : ${userPrefer.userLikes}');
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => RecipePage(keyword: true)));
-                      },
-                      child: Text(
-                        '맞춤형 레시피 확인하기',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w400),
+            (_recognitions.isNotEmpty)
+                ? Column(
+                  children: [
+                    SizedBox(
+                      width: 300,
+                      height: 40,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            print('userPrefer.userLikes : ${userPrefer.userLikes}');
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => RecipePage(keyword: true)));
+                          },
+                          child: Text(
+                            '맞춤형 레시피 확인하기',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFF242760),
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0))),
+                        ),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    SizedBox(
+                      width: 300,
+                      height: 40,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _image = null;
+                          });
+                          _captureImage(userPrefer);
+                        },
+                        child: Text(
+                          '재료 더 추가하기',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFF242760),
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0))),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF242760),
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0))),
-                    )
-                  : ElevatedButton(
+                    ),
+                  ],
+                )
+                : SizedBox(
+                  width: 300,
+                  height: 40,
+                  child: ElevatedButton(
                       onPressed: (){
                         _captureImage(userPrefer);
                       },
@@ -206,7 +241,7 @@ class _ClassifierState extends State<Classifier> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0))),
                     ),
-            ),
+                ),
           ],
         ),
       ),
