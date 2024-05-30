@@ -14,19 +14,17 @@
 
 ## 주요 기능
 
+
 | 화면 | 설명 | 이미지 |
 |------|------|--------|
-| 로그인 및 회원가입 | 계정 로그인/생성 |![로그인 및 회원가입]![start](https://github.com/awaaaake/Hansang/assets/103404308/9428e976-a97c-4142-bb86-258448122c9a)![login](https://githu![signup](https://github.com/awaaaake/Hansang/assets/103404308/c601fec4-3059-4b93-bce3-32585014b279)
-b.com/awaaaake/Hansang/assets/103404308/54bb9c7c-5723-4875-bcb1-cfb3f0e006d0)
-
-|
-| 레시피 검색 | 레시피 검색 기능 | ![레시피 검색](images/recipe_search_screen.png) |
-| 맞춤 레시피 | 맞춤형 레시피 추천 | ![맞춤 레시피](images/custom_recipe_screen.png) |
-| 식자재 기반 및 협업 필터링 사용자 맞춤 레시피 추천 | 식자재 및 리뷰 기반 레시피 추천 | ![식자재 기반 레시피 추천](images/ingredient_based_recommendation_screen.png) |
-| 식자재 인식 맞춤 레시피 추천 | 식자재 인식 기반 레시피 추천 | ![식자재 인식 레시피 추천](images/ingredient_recognition_screen.png) |
-| 사용자 게시판 | 사용자 게시판 | ![사용자 게시판](images/user_board_screen.png) |
-| 리뷰 | 레시피 리뷰 작성 및 조회 | ![리뷰](images/review_screen.png) |
-| 마이페이지 | 프로필 및 개인 설정 관리 | ![마이페이지](images/mypage_screen.png) |
+| 로그인 및 회원가입 | 계정 로그인/생성 | ![로그인 화면](images/login_screen1.png), ![회원가입 화면](images/signup_screen1.png) |
+| 레시피 검색 | 레시피 검색 기능 | ![레시피 검색 1](images/recipe_search_screen1.png), ![레시피 검색 2](images/recipe_search_screen2.png) |
+| 맞춤 레시피 | 맞춤형 레시피 추천 | ![맞춤 레시피 1](images/custom_recipe_screen1.png), ![맞춤 레시피 2](images/custom_recipe_screen2.png) |
+| 식자재 기반 및 협업 필터링 사용자 맞춤 레시피 추천 | 식자재 및 리뷰 기반 레시피 추천 | ![식자재 기반 레시피 추천 1](images/ingredient_based_recommendation_screen1.png), ![식자재 기반 레시피 추천 2](images/ingredient_based_recommendation_screen2.png) |
+| 식자재 인식 맞춤 레시피 추천 | 식자재 인식 기반 레시피 추천 | ![식자재 인식 레시피 추천 1](images/ingredient_recognition_screen1.png), ![식자재 인식 레시피 추천 2](images/ingredient_recognition_screen2.png) |
+| 사용자 게시판 | 사용자 게시판 | ![사용자 게시판 1](images/user_board_screen1.png), ![사용자 게시판 2](images/user_board_screen2.png) |
+| 리뷰 | 레시피 리뷰 작성 및 조회 | ![리뷰 1](images/review_screen1.png), ![리뷰 2](images/review_screen2.png) |
+| 마이페이지 | 프로필 및 개인 설정 관리 | ![마이페이지 1](images/mypage_screen1.png), ![마이페이지 2](images/mypage_screen2.png) |
 
 ## 개발 환경 및 시스템 구성
 
