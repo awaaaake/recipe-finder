@@ -14,12 +14,6 @@
 
 ## 주요 기능
 
-
-![recipe_recommend](https://github.com/awaaaake/Hansang/assets/103404308/30576508-655d-4678-b046-83f488834f27)
-
-
-
-
 ### 로그인 및 회원가입
 계정 로그인/생성
 
