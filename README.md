@@ -1,4 +1,4 @@
-# 한상🍽️:한국인의 밥상
+# 한상🍽️ : 한국인의 밥상
 
 **한상** 애플리케이션은 사용자 맞춤형 레시피를 제공하는 앱으로, 식자재 인식 및 다양한 필터링을 통해 사용자에게 최적화된 레시피를 추천합니다. 
 
@@ -16,7 +16,7 @@
 
 | 화면 | 설명 | 이미지 |
 |------|------|--------|
-| 로그인 및 회원가입 | 계정 로그인/생성 | ![로그인 및 회원가입](images/login_signup_screen.png) |
+| 로그인 및 회원가입 | 계정 로그인/생성 |(images/login_signup_screen.png) |
 | 레시피 검색 | 레시피 검색 기능 | ![레시피 검색](images/recipe_search_screen.png) |
 | 맞춤 레시피 | 맞춤형 레시피 추천 | ![맞춤 레시피](images/custom_recipe_screen.png) |
 | 식자재 기반 및 협업 필터링 사용자 맞춤 레시피 추천 | 식자재 및 리뷰 기반 레시피 추천 | ![식자재 기반 레시피 추천](images/ingredient_based_recommendation_screen.png) |
