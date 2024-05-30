@@ -14,17 +14,74 @@
 
 ## 주요 기능
 
+![start](https://github.com/awaaaake/Hansang/assets/103404308/b80ee262-8bbd-4ab1-aa69-5b8d85bcca56)
+![signup](https://github.com/awaaaake/Hansang/assets/103404308/73b5b464-a6ab-4f73-b958-825315fb4f57)
+![login](https://github.com/awaaaake/Hansang/assets/103404308/5509761b-4fe7-4b40-bf8b-8e7526e3f814)
 
-| 화면 | 설명 | 이미지 |
-|------|------|--------|
-| 로그인 및 회원가입 | 계정 로그인/생성 | ![start](https://github.com/awaaaake/Hansang/assets/103404308/c1300c99-996c-44db-9505-b3dbdc634349), ![signup](https://github.com/awaaaake/Hansang/assets/103404308/0729d9d2-f104-44ee-bcd0-8a2479d9f024), ![login](https://github.com/awaaaake/Hansang/assets/103404308/3a3df5e5-f3dd-4975-afc7-fe3acea6a6e2) |
-| 레시피 검색 | 레시피 검색 기능 | ![레시피 검색 1](images/recipe_search_screen1.png), ![레시피 검색 2](images/recipe_search_screen2.png) |
-| 맞춤 레시피 | 맞춤형 레시피 추천 | ![맞춤 레시피 1](images/custom_recipe_screen1.png), ![맞춤 레시피 2](images/custom_recipe_screen2.png) |
-| 식자재 기반 및 협업 필터링 사용자 맞춤 레시피 추천 | 식자재 및 리뷰 기반 레시피 추천 | ![식자재 기반 레시피 추천 1](images/ingredient_based_recommendation_screen1.png), ![식자재 기반 레시피 추천 2](images/ingredient_based_recommendation_screen2.png) |
-| 식자재 인식 맞춤 레시피 추천 | 식자재 인식 기반 레시피 추천 | ![식자재 인식 레시피 추천 1](images/ingredient_recognition_screen1.png), ![식자재 인식 레시피 추천 2](images/ingredient_recognition_screen2.png) |
-| 사용자 게시판 | 사용자 게시판 | ![사용자 게시판 1](images/user_board_screen1.png), ![사용자 게시판 2](images/user_board_screen2.png) |
-| 리뷰 | 레시피 리뷰 작성 및 조회 | ![리뷰 1](images/review_screen1.png), ![리뷰 2](images/review_screen2.png) |
-| 마이페이지 | 프로필 및 개인 설정 관리 | ![마이페이지 1](images/mypage_screen1.png), ![마이페이지 2](images/mypage_screen2.png) |
+### 로그인 및 회원가입
+계정 로그인/생성
+
+<p float="left">
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/b80ee262-8bbd-4ab1-aa69-5b8d85bcca56" alt="start" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/5509761b-4fe7-4b40-bf8b-8e7526e3f814" alt="login" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/73b5b464-a6ab-4f73-b958-825315fb4f57" alt="signup" width="300"/>
+</p>
+
+### 레시피 검색
+레시피 검색 기능
+
+<p float="left">
+  <img src="images/recipe_search_screen1.png" alt="레시피 검색 1" width="300"/>
+  <img src="images/recipe_search_screen2.png" alt="레시피 검색 2" width="300"/>
+</p>
+
+### 맞춤 레시피
+맞춤형 레시피 추천
+
+<p float="left">
+  <img src="images/custom_recipe_screen1.png" alt="맞춤 레시피 1" width="300"/>
+  <img src="images/custom_recipe_screen2.png" alt="맞춤 레시피 2" width="300"/>
+</p>
+
+### 식자재 기반 및 협업 필터링 사용자 맞춤 레시피 추천
+식자재 및 리뷰 기반 레시피 추천
+
+<p float="left">
+  <img src="images/ingredient_based_recommendation_screen1.png" alt="식자재 기반 레시피 추천 1" width="300"/>
+  <img src="images/ingredient_based_recommendation_screen2.png" alt="식자재 기반 레시피 추천 2" width="300"/>
+</p>
+
+### 식자재 인식 맞춤 레시피 추천
+식자재 인식 기반 레시피 추천
+
+<p float="left">
+  <img src="images/ingredient_recognition_screen1.png" alt="식자재 인식 레시피 추천 1" width="300"/>
+  <img src="images/ingredient_recognition_screen2.png" alt="식자재 인식 레시피 추천 2" width="300"/>
+</p>
+
+### 사용자 게시판
+사용자 게시판
+
+<p float="left">
+  <img src="images/user_board_screen1.png" alt="사용자 게시판 1" width="300"/>
+  <img src="images/user_board_screen2.png" alt="사용자 게시판 2" width="300"/>
+</p>
+
+### 리뷰
+레시피 리뷰 작성 및 조회
+
+<p float="left">
+  <img src="images/review_screen1.png" alt="리뷰 1" width="300"/>
+  <img src="images/review_screen2.png" alt="리뷰 2" width="300"/>
+</p>
+
+### 마이페이지
+프로필 및 개인 설정 관리
+
+<p float="left">
+  <img src="images/mypage_screen1.png" alt="마이페이지 1" width="300"/>
+  <img src="images/mypage_screen2.png" alt="마이페이지 2" width="300"/>
+</p>
 
 ## 개발 환경 및 시스템 구성
 
