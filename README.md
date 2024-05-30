@@ -14,73 +14,75 @@
 
 ## 주요 기능
 
-![start](https://github.com/awaaaake/Hansang/assets/103404308/b80ee262-8bbd-4ab1-aa69-5b8d85bcca56)
-![signup](https://github.com/awaaaake/Hansang/assets/103404308/73b5b464-a6ab-4f73-b958-825315fb4f57)
-![login](https://github.com/awaaaake/Hansang/assets/103404308/5509761b-4fe7-4b40-bf8b-8e7526e3f814)
+
+![recipe_recommend](https://github.com/awaaaake/Hansang/assets/103404308/30576508-655d-4678-b046-83f488834f27)
+
+
+
 
 ### 로그인 및 회원가입
 계정 로그인/생성
 
 <p float="left">
-  <img src="https://github.com/awaaaake/Hansang/assets/103404308/b80ee262-8bbd-4ab1-aa69-5b8d85bcca56" alt="start" width="300"/>
-  <img src="https://github.com/awaaaake/Hansang/assets/103404308/5509761b-4fe7-4b40-bf8b-8e7526e3f814" alt="login" width="300"/>
-  <img src="https://github.com/awaaaake/Hansang/assets/103404308/73b5b464-a6ab-4f73-b958-825315fb4f57" alt="signup" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/b80ee262-8bbd-4ab1-aa69-5b8d85bcca56" alt="start" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/5509761b-4fe7-4b40-bf8b-8e7526e3f814" alt="login" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/73b5b464-a6ab-4f73-b958-825315fb4f57" alt="signup" width="200"/>
 </p>
 
 ### 레시피 검색
 레시피 검색 기능
 
 <p float="left">
-  <img src="images/recipe_search_screen1.png" alt="레시피 검색 1" width="300"/>
-  <img src="images/recipe_search_screen2.png" alt="레시피 검색 2" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/87917253-8c89-4f73-9b37-5ff06040ec6f" alt="recipe1" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/24f18fa3-7866-428f-a6bb-98f32562bae4" alt="recipe2" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/8f698772-e3f8-4506-8d62-1b5a82b87a41" alt="recipe3" width="200"/>
 </p>
 
 ### 맞춤 레시피
 맞춤형 레시피 추천
 
 <p float="left">
-  <img src="images/custom_recipe_screen1.png" alt="맞춤 레시피 1" width="300"/>
-  <img src="images/custom_recipe_screen2.png" alt="맞춤 레시피 2" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/30576508-655d-4678-b046-83f488834f27" alt="recipe_recommend" width="200"/>
 </p>
 
 ### 식자재 기반 및 협업 필터링 사용자 맞춤 레시피 추천
 식자재 및 리뷰 기반 레시피 추천
 
 <p float="left">
-  <img src="images/ingredient_based_recommendation_screen1.png" alt="식자재 기반 레시피 추천 1" width="300"/>
-  <img src="images/ingredient_based_recommendation_screen2.png" alt="식자재 기반 레시피 추천 2" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/272a1da3-be71-4ee9-83cd-06484d28a10d" alt="recommend1" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/9de888e3-e960-4b57-9c61-f168d77cb459" alt="recommend2" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/33e433d7-6403-4da0-8899-76acdf125cec" alt="user" width="200"/>
 </p>
 
 ### 식자재 인식 맞춤 레시피 추천
 식자재 인식 기반 레시피 추천
 
 <p float="left">
-  <img src="images/ingredient_recognition_screen1.png" alt="식자재 인식 레시피 추천 1" width="300"/>
-  <img src="images/ingredient_recognition_screen2.png" alt="식자재 인식 레시피 추천 2" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/0b8cd654-22f5-4ef4-a329-2b223fc3a641" alt="ingredient1" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/ac4f6f75-da92-4342-995a-8e35ffd82759" alt="ingredient2" width="200"/>
 </p>
 
 ### 사용자 게시판
 사용자 게시판
 
 <p float="left">
-  <img src="images/user_board_screen1.png" alt="사용자 게시판 1" width="300"/>
-  <img src="images/user_board_screen2.png" alt="사용자 게시판 2" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/f30c47ef-ac06-4822-908d-aff1c38fc32a" alt="user1" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/145231b2-0b66-4f17-8111-5583b41bf878" alt="user2" width="200"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/80348593-8db0-4b55-9822-cfc896794665" alt="user3" width="200"/>
 </p>
 
 ### 리뷰
 레시피 리뷰 작성 및 조회
 
 <p float="left">
-  <img src="images/review_screen1.png" alt="리뷰 1" width="300"/>
-  <img src="images/review_screen2.png" alt="리뷰 2" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/5942bc12-5d3a-4daa-b521-cb97dc26dac9" alt="review" width="200"/>
 </p>
 
 ### 마이페이지
 프로필 및 개인 설정 관리
 
 <p float="left">
-  <img src="images/mypage_screen1.png" alt="마이페이지 1" width="300"/>
-  <img src="images/mypage_screen2.png" alt="마이페이지 2" width="300"/>
+  <img src="https://github.com/awaaaake/Hansang/assets/103404308/0c36cb9b-94e6-4c5f-a2cf-ffb28f7bb87b" alt="mypage" width="200"/>
 </p>
 
 ## 개발 환경 및 시스템 구성
