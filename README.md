@@ -17,7 +17,7 @@
 
 | 화면 | 설명 | 이미지 |
 |------|------|--------|
-| 로그인 및 회원가입 | 계정 로그인/생성 | ![로그인 화면](images/login_screen1.png), ![회원가입 화면](images/signup_screen1.png) |
+| 로그인 및 회원가입 | 계정 로그인/생성 | ![start](https://github.com/awaaaake/Hansang/assets/103404308/c1300c99-996c-44db-9505-b3dbdc634349), ![signup](https://github.com/awaaaake/Hansang/assets/103404308/0729d9d2-f104-44ee-bcd0-8a2479d9f024), ![login](https://github.com/awaaaake/Hansang/assets/103404308/3a3df5e5-f3dd-4975-afc7-fe3acea6a6e2) |
 | 레시피 검색 | 레시피 검색 기능 | ![레시피 검색 1](images/recipe_search_screen1.png), ![레시피 검색 2](images/recipe_search_screen2.png) |
 | 맞춤 레시피 | 맞춤형 레시피 추천 | ![맞춤 레시피 1](images/custom_recipe_screen1.png), ![맞춤 레시피 2](images/custom_recipe_screen2.png) |
 | 식자재 기반 및 협업 필터링 사용자 맞춤 레시피 추천 | 식자재 및 리뷰 기반 레시피 추천 | ![식자재 기반 레시피 추천 1](images/ingredient_based_recommendation_screen1.png), ![식자재 기반 레시피 추천 2](images/ingredient_based_recommendation_screen2.png) |
